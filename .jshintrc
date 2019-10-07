@@ -1,0 +1,15 @@
+{
+  "esversion": 8,
+  "maxdepth": 3,
+  "maxparams": 3,
+  "node": true,
+  "mocha": true,
+  "asi": true,
+  "varstmt": true,
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "document": true,
+    "localStorage": true
+  }
+}

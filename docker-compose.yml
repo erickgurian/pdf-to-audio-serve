@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  back:
+    container_name: server-back
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    links:
+      - pgadmin
+    networks:
+      - network
+    entrypoint: npm run dev --ignore test
+    # entrypoint: npm start
+
+  postgres:
+    container_name: server-postgres
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "Postgres2019!"
+      POSTGRES_DB: "docker"
+    ports:
+      - "5432:5432"
+    volumes:
+      - .data:/var/lib/postgresql/data
+    networks:
+      - network
+
+  pgadmin:
+    container_name: server-pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "t@t.com"
+      PGADMIN_DEFAULT_PASSWORD: "PgAdmin2019!"
+    ports:
+      - "7000:80"
+      - "7001:443"
+    links:
+      - postgres
+    networks:
+      - network
+
+networks:
+  network:
+    driver: bridge
