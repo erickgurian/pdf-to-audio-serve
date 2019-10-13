@@ -1,2 +1,4 @@
 .data
 .vscode
+tmp/uploads
+node_modules
