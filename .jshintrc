@@ -10,6 +10,7 @@
   "unused": true,
   "globals": {
     "document": true,
-    "localStorage": true
+    "localStorage": true,
+    "expect": true
   }
 }

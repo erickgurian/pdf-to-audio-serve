@@ -1,4 +1,4 @@
 .data
 .vscode
-tmp/uploads
+tmp/uploads/*
 node_modules
