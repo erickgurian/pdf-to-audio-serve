@@ -8,6 +8,10 @@ router.use('/', require('./routes/login'));
 
 router.use(authMiddleware);
 
+router.post('/dashboard', (req, res) => {
+    return res.status(200).send({'dash': true});
+});
+
 router.use('/itens', require('./routes/item'));
 
 router.use(routeNotFound);

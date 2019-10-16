@@ -52,7 +52,7 @@ describe('Autentication', () => {
 
   it('should be able to access private routes when authenticated', async () => {
     const user = await factory.create('User', {
-      password: '123123',
+      password: '123456',
     });
 
     const response = await request(app)
