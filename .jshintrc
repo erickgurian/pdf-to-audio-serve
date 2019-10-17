@@ -11,6 +11,7 @@
   "globals": {
     "document": true,
     "localStorage": true,
-    "expect": true
+    "expect": true,
+    "jest": true
   }
 }

@@ -1,7 +1,7 @@
-const request = require('supertest');
+// const request = require('supertest');
 
 const routeNotFound = require('../../../src/app/middleware/routeNotFound');
-const app = require('../../../src/app');
+// const app = require('../../../src/app');
 
 describe('testing the route-not-found middleware', () => {
   it('should call a next function passing an error as parameter', (done) => {
