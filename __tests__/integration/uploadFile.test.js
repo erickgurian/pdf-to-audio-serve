@@ -14,10 +14,11 @@ describe("Autentication", () => {
     const user = await factory.create('User');
 
     const response = await request(app)
-      .get("/itens/uploadFile")
-      .attach('file', '../tmp/testeUpload.txt')
+      .post("/itens/uploadFile")
+      .attach('file', '__tests__/tmp/pinguim.jpg')
       .set("Authorization", `Bearer ${user.generateToken()}`);
 
+    console.log(response);
     expect(response.status).toBe(200);
   });
 });
