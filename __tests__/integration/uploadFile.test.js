@@ -1,15 +1,15 @@
 // const request = require('supertest');
 
 // const app = require('../../src/app');
-const truncate = require('../utils/truncate');
+const truncate = require("../utils/truncate");
 // const factory = require('../factories');
 
-describe('Autentication', () => {
+describe("Autentication", () => {
   beforeEach(async () => {
     await truncate();
   });
 
-  it('should authenticate with valid credentials', async () => {
+  it("should authenticate with valid credentials", async () => {
     // const user = await factory.create('User');
 
     // const response = await request(app)

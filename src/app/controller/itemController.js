@@ -1,7 +1,5 @@
 // const { Item } = require('../models');
 
-class SessionController {
-
-}
+class SessionController {}
 
 module.exports = new SessionController();

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Item = sequelize.define('Item', {
+  const Item = sequelize.define("Item", {
     name: DataTypes.STRING,
     key: DataTypes.STRING,
     url: DataTypes.STRING,
@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     duration: DataTypes.NUMBER,
     favorite: DataTypes.BOOLEAN,
     completed: DataTypes.BOOLEAN,
-    user_id: DataTypes.NUMBER,
+    user_id: DataTypes.NUMBER
   });
 
   return Item;

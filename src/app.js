@@ -1,5 +1,5 @@
-const express = require('express');
-const morgan = require('morgan');
+const express = require("express");
+const morgan = require("morgan");
 
 class AppController {
   constructor() {
@@ -10,10 +10,10 @@ class AppController {
   middlewares() {
     this.express.use(express.json());
     this.express.use(express.urlencoded({ extended: true }));
-    this.express.use(morgan('dev'));
+    this.express.use(morgan("dev"));
   }
   routes() {
-    this.express.use(require('./routes'));
+    this.express.use(require("./routes"));
   }
 }
 
