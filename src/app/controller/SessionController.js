@@ -19,6 +19,16 @@ class SessionController {
       token: user.generateToken()
     });
   }
+
+  async logout(req, res) {
+    const { email } = req.body;
+
+    const user = await User.findOne({ where: { email } });
+    
+    return res.status(200).send({
+      user
+    })
+  }
 }
 
 module.exports = new SessionController();

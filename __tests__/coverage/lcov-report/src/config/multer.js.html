@@ -85,11 +85,11 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -100,14 +100,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,6 +108,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -124,44 +124,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const multer = require('multer');
-const path = require('path');
-const crypto = require('crypto');
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const multer = require("multer");
+const path = require("path");
+const crypto = require("crypto");
 &nbsp;
 module.exports = {
-  dest: path.resolve(__dirname, '..', '..', 'tmp', 'uploads'),
+  dest: path.resolve(__dirname, "..", "..", "tmp", "uploads"),
   storage: multer.diskStorage({
     destination: <span class="fstat-no" title="function not covered" >(r</span>eq, file, cb) =&gt; {
-<span class="cstat-no" title="statement not covered" >      cb(null, path.resolve(__dirname, '..', '..', 'tmp', 'uploads'));</span>
+<span class="cstat-no" title="statement not covered" >      cb(null, path.resolve(__dirname, "..", "..", "tmp", "uploads"));</span>
     },
     filename: <span class="fstat-no" title="function not covered" >(r</span>eq, file, cb) =&gt; {
 <span class="cstat-no" title="statement not covered" >      crypto.randomBytes(16, <span class="fstat-no" title="function not covered" >(e</span>rr, hash) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (err) <span class="cstat-no" title="statement not covered" >cb(err);</span></span>
 &nbsp;
-        const fileName = <span class="cstat-no" title="statement not covered" >`${hash.toString('hex')}-${file.originalname}`;</span>
+        const fileName = <span class="cstat-no" title="statement not covered" >`${hash.toString("hex")}-${file.originalname}`;</span>
 <span class="cstat-no" title="statement not covered" >        cb(null, fileName);</span>
       });
-    },
+    }
   }),
   limits: {
-    fileSize: 2 * 1024 * 1024,
+    fileSize: 2 * 1024 * 1024
   },
   fileFilter: <span class="fstat-no" title="function not covered" >(r</span>eq, file, cb) =&gt; {
     const allowedMimes = <span class="cstat-no" title="statement not covered" >[</span>
-      'image/jpeg',
-      'image/pjpeg',
-      'image/png',
-      'image/gif',
-      'image/gif',
-      'pdf',
+      "image/jpeg",
+      "image/pjpeg",
+      "image/png",
+      "image/gif",
+      "image/gif",
+      "pdf"
     ];
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (allowedMimes.includes(file.mimetype)) {</span>
 <span class="cstat-no" title="statement not covered" >      cb(null, true);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      cb(new Error('Invalid file type.'));</span>
+<span class="cstat-no" title="statement not covered" >      cb(new Error("Invalid file type."));</span>
     }
-  },
+  }
 };
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -169,7 +169,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 17 2019 01:44:11 GMT+0000 (Coordinated Universal Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 17 2019 09:48:31 GMT+0000 (Coordinated Universal Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -1,8 +1,9 @@
-// const request = require('supertest');
+const request = require('supertest');
 
-// const app = require('../../src/app');
+const app = require('../../src/app');
 const truncate = require("../utils/truncate");
-// const factory = require('../factories');
+const factory = require("../factories");
+
 
 describe("Autentication", () => {
   beforeEach(async () => {
@@ -10,15 +11,13 @@ describe("Autentication", () => {
   });
 
   it("should authenticate with valid credentials", async () => {
-    // const user = await factory.create('User');
+    const user = await factory.create('User');
 
-    // const response = await request(app)
-    //   .post('/sessions')
-    //   .send({
-    //     email: user.email,
-    //     password: '123456',
-    //   });
+    const response = await request(app)
+      .get("/itens/uploadFile")
+      .attach('file', '../tmp/testeUpload.txt')
+      .set("Authorization", `Bearer ${user.generateToken()}`);
 
-    expect(1).toBe(1);
+    expect(response.status).toBe(200);
   });
 });
