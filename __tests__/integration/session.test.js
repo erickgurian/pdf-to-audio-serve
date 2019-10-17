@@ -38,7 +38,9 @@ describe('Autentication', () => {
   });
 
   it('should return jwt token when authenticated', async () => {
-    const user = await factory.create('User');
+    const user = await factory.create('User', {
+      password: '123456',
+    });
 
     const response = await request(app)
       .post('/sessions')

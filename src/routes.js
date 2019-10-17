@@ -8,8 +8,8 @@ router.use('/', require('./routes/login'));
 
 router.use(authMiddleware);
 
-router.post('/dashboard', (req, res) => {
-    return res.status(200).send({'dash': true});
+router.get('/dashboard', (req, res) => {
+    return res.status(200).send();
 });
 
 router.use('/itens', require('./routes/item'));

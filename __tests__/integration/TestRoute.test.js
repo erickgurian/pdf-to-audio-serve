@@ -4,9 +4,9 @@ const app = require('../../src/app');
 describe('Test Route', () => {
   it('should return proper response', async () => {
     const { status, body } = await request(app).get('/test');
-    let bodyExpected = {"api":"active"};
-
+    let bodyExpected = { api: 'active' };
+    
     expect(status).toBe(200);
-    expect(body).toBe(bodyExpected);
+    expect(body).toEqual(bodyExpected);
   });
 });
